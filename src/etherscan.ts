@@ -1,5 +1,5 @@
 import invariant from 'tiny-invariant'
-import { CHAINS } from '@lynx-sdk/constants'
+import { CHAINS } from '@lido-sdk/constants'
 
 export enum ETHERSCAN_ENTITIES {
   Tx = 'tx',

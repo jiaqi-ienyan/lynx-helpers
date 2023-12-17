@@ -1,4 +1,4 @@
-import { CHAINS } from '@lynx-sdk/constants';
+import { CHAINS } from '@lido-sdk/constants';
 export declare enum ETHERSCAN_ENTITIES {
     Tx = "tx",
     Token = "token",
