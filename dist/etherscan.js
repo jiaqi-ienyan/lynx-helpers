@@ -2,7 +2,7 @@
 var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getEtherscanAddressLink = exports.getEtherscanTokenLink = exports.getEtherscanTxLink = exports.getEtherscanLink = exports.getEtherscanPrefix = exports.ETHERSCAN_PREFIX_BY_NETWORK = exports.ETHERSCAN_ENTITIES = void 0;
-var tiny_invariant_1 = require("tiny-invariant");
+var invariant = require("tiny-invariant");
 var constants_1 = require("@lido-sdk/constants");
 var ETHERSCAN_ENTITIES;
 (function (ETHERSCAN_ENTITIES) {
@@ -20,14 +20,14 @@ exports.ETHERSCAN_PREFIX_BY_NETWORK = (_a = {},
     _a);
 var getEtherscanPrefix = function (chainId) {
     var prefix = exports.ETHERSCAN_PREFIX_BY_NETWORK[chainId];
-    (0, tiny_invariant_1.default)(prefix != null, 'Chain is not supported');
+    invariant(prefix != null, 'Chain is not supported');
     return prefix;
 };
 exports.getEtherscanPrefix = getEtherscanPrefix;
 var getEtherscanLink = function (chainId, hash, entity) {
     var prefix = (0, exports.getEtherscanPrefix)(chainId);
-    (0, tiny_invariant_1.default)(hash && typeof hash === 'string', 'Hash should be a string');
-    (0, tiny_invariant_1.default)(entity && typeof entity === 'string', 'Entity should be a string');
+    invariant(hash && typeof hash === 'string', 'Hash should be a string');
+    invariant(entity && typeof entity === 'string', 'Entity should be a string');
     return "https://".concat(prefix, "etherscan.io/").concat(entity, "/").concat(hash);
 };
 exports.getEtherscanLink = getEtherscanLink;
